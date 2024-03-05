@@ -6,16 +6,31 @@ hauteur_ecran= 600
 largeur_raquette=80
 hauteur_raquette=10
 
-class Raquette(pygame.sprite.Sprite):
-    def__init__(self,largeur,hauteur):
-        self.largeur=largeur
-        self.hauteur=hauteur
+class Raquette (pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.surf = pygame.Surface((largeur_raquette,hauteur_raquette))
+        self.surf.fill((0,255,0))
+        self.rect=self.surf.get_rect()
+        self.rect.x=largeur_ecran /2 -largeur_ecran/2
+        self.rect.y=hauteur_ecran/2- 2*  hauteur_ecran
+
+
+
 
 
 pygame.init()
 pygame.display.set_caption("Casse brique")
 
-screen=pygame.d0isplay.set_mode([largeur_ecran,hauteur_ecran])
+screen=pygame.display.set_mode([largeur_ecran,hauteur_ecran])
+
+
+
+ma_raquette=Raquette()
+
+
+
+
 
 running=True
 while running:
